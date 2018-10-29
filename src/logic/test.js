@@ -12,3 +12,16 @@ it('Should indicate no winning result', () => {
   expect(xResult.won).toBe(false);
   expect(oResult.won).toBe(false);
 });
+
+it('Should indicate X as a winner in row0', () => {
+  const board = {
+    0: [X, X, X],
+    1: ['', O, ''],
+    2: ['', '', O]
+  };
+  const xResult = resultForSymbol(X, board);
+  const oResult = resultForSymbol(O, board);
+  expect(xResult.won).toBe(true);
+  expect(xResult.line).toBe('row0');
+  expect(oResult.won).toBe(false);
+});
