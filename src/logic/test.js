@@ -64,3 +64,16 @@ it('Should indicate O as a winner in column0', () => {
   expect(oResult.won).toBe(true);
   expect(oResult.line).toBe('column0');
 });
+
+it('Should indicate O as a winner in column1', () => {
+  const board = {
+    0: ['', O, X],
+    1: ['', O, ''],
+    2: [X, O, X]
+  };
+  const xResult = resultForSymbol(X, board);
+  const oResult = resultForSymbol(O, board);
+  expect(xResult.won).toBe(false);
+  expect(oResult.won).toBe(true);
+  expect(oResult.line).toBe('column1');
+});
