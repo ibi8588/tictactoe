@@ -103,3 +103,16 @@ it('Should indicate O as a winner in leftSlant', () => {
   expect(oResult.won).toBe(true);
   expect(oResult.line).toBe('leftSlant');
 });
+
+it('Should indicate X as a winner in rightSlant', () => {
+  const board = {
+    0: ['', O, X],
+    1: ['', X, ''],
+    2: [X, '', O]
+  };
+  const xResult = resultForSymbol(X, board);
+  const oResult = resultForSymbol(O, board);
+  expect(xResult.won).toBe(true);
+  expect(xResult.line).toBe('rightSlant');
+  expect(oResult.won).toBe(false);
+});
