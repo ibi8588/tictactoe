@@ -41,3 +41,11 @@ it('Should display a "start again" text when there was a draw', () => {
   const wrapper = shallow(<Board board={board} draw={true} startAgain={startAgain} addSymbol={addSymbol} turn={X} />);
   expect(wrapper.find('p.startAgain').length).toBe(1);
 });
+
+it('Should call a passed callback when clicked upon the "start again"', () => {
+  const startAgain = jest.fn();
+  const addSymbol = jest.fn();
+  const wrapper = shallow(<Board board={board} won={X} startAgain={startAgain} addSymbol={addSymbol} draw={false} turn={X} />);
+  wrapper.find('p.startAgain').simulate('click');
+  expect(startAgain.mock.calls.length).toBe(1);
+});
