@@ -27,3 +27,10 @@ it('Should not display a "start again" text when neither won and there was no dr
   const wrapper = shallow(<Board board={board} startAgain={startAgain} addSymbol={addSymbol} draw={false} turn={X} />);
   expect(wrapper.find('p.startAgain').length).toBe(0);
 });
+
+it('Should display a "start again" text when one symbol won', () => {
+  const startAgain = jest.fn();
+  const addSymbol = jest.fn();
+  const wrapper = shallow(<Board board={board} won={X} startAgain={startAgain} addSymbol={addSymbol} draw={false} turn={X} />);
+  expect(wrapper.find('p.startAgain').length).toBe(1);
+});
