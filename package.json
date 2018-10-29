@@ -2,6 +2,13 @@
   "name": "tic-tac-toe-game",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "gh-pages": "^0.12.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-scripts": "1.0.17"
+  },
   "dependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",

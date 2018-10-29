@@ -11,7 +11,7 @@ export const initialState = {
   won: undefined,
   wonLine: undefined,
   draw: false,
-  turn: O
+  turn: X
 };
 
 export const gameReducer = (state, action) => {
