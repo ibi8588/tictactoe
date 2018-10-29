@@ -33,3 +33,19 @@ it('Should set "won" symbol when a winning line is set', () => {
   const nextState = gameReducer(state, {type: 'ADD_SYMBOL', symbol: X, row: 2, position: 2});
   expect(nextState.won).toEqual(X);
 });
+
+it('Should reset the state to initial', () => {
+  const state = {
+    board: {
+      0: [X,  O, ''],
+      1: ['', X, ''],
+      2: [O, '', '']
+    },
+    won: undefined,
+    wonLine: undefined,
+    draw: false,
+    turn: X
+  };
+  const nextState = gameReducer(state, {type: 'START_AGAIN'});
+  expect(nextState).toEqual(initialState);
+});
